@@ -1,0 +1,22 @@
+# 사용할 베이스 이미지를 선택합니다. 여기서는 Ubuntu 기반의 이미지를 사용합니다.
+FROM ubuntu:22.04
+
+# Python 3.8을 설치합니다.
+RUN apt-get update && apt-get install -y python3.8
+
+# Python 실행 파일을 /usr/bin/python3로 심볼릭 링크합니다.
+RUN ln -s /usr/bin/python3.8 /usr/bin/python3
+
+# Python 패키지 관리자 pip를 설치합니다.
+RUN apt-get install -y python3-pip
+
+# Python 패키지 설치를 위한 디렉토리를 생성합니다.
+RUN mkdir -p /usr/share/python-wheels
+
+# 도커 컨테이너 내에서 Python을 사용할 수 있도록 환경을 설정합니다.
+ENV PATH="/usr/local/bin:${PATH}"
+
+# 필요한 경우 추가적인 설정 및 패키지 설치를 수행합니다.
+
+# 컨테이너 실행 시 실행될 기본 명령을 설정합니다.
+CMD [ "python3" ]
