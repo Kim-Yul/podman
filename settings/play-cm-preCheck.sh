@@ -19,6 +19,7 @@ done
 
 # 'pre-checkpoint' 명령어 실행
 sudo podman container checkpoint --pre-checkpoint changedMemory
+sudo podman container checkpoint --print-stats changedMemory
 
 # 60초 후까지 대기
 while true; do
@@ -32,3 +33,4 @@ done
 
 # 'pre-checkpoint' 명령어 실행
 sudo podman container checkpoint --pre-checkpoint changedMemory
+sudo podman container checkpoint --print-stats changedMemory
