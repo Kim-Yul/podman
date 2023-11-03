@@ -13,6 +13,7 @@ fi
 echo -e "\n필요한 이미지를 생성합니다."
 sudo podman build -t python -f Dockerfile-python . &> /dev/null
 sudo podman build -t cm -f Dockerfile-cm . &> /dev/null
+sudo podman build -t notcm -f Dockerfile-notCM . &> /dev/null
 echo -e "필요한 이미지를 모두 생성했습니다."
 
 # 생성한 images 목록을 확인한다.
