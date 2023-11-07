@@ -1,5 +1,5 @@
 # 사용할 베이스 이미지를 선택합니다.
-FROM python
+FROM tensorflow/tensorflow:latest
 
 # 컨테이너 내에서 작업 디렉토리를 설정합니다.
 WORKDIR /play
