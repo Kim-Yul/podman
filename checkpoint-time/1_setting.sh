@@ -1,16 +1,12 @@
 #!/bin/bash
 
-# red hat 에서 podman 을 설치한다.
-if ! rpm -q podman &> /dev/null
-then
-    echo -e "\npodman이 설치되어 있지 않습니다. podman을 설치합니다.\n"
-    sudo dnf -y install podman
-else
-    echo -e "\npodman이 이미 설치되어 있습니다."
-fi
+# 기존에 존재하는 images 목록을 전부 삭제한다.
+echo -e "\n존재하는 모든 이미지를 삭제합니다."
+sudo podman rm -a
+sudo podman rmi -a
 
 # container 이미지를 생성한다.
-echo -e "\n필요한 이미지를 생성합니다."
+echo -e "\ncheckpoint-time 실험에 필요한 이미지를 생성합니다."
 sudo podman build -t python -f Dockerfile-python . &> /dev/null
 sudo podman pull docker.io/tensorflow/tensorflow:latest &> /dev/null
 sudo podman build -t cm -f Dockerfile-cm . &> /dev/null
