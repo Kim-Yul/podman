@@ -33,3 +33,6 @@ done
 # 'pre-checkpoint' 명령어 실행
 sudo podman container checkpoint --print-stats --pre-checkpoint changedMemory
 sudo podman stop changedMemory
+
+# 실험 종료 후 컨테이너 삭제
+sudo podman rm changedMemory

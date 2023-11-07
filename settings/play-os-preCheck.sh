@@ -32,3 +32,7 @@ done
 
 # 'pre-checkpoint' 명령어 실행
 sudo podman container checkpoint --print-stats --pre-checkpoint osImage
+sudo podman stop osImage
+
+# 실험 종료 후 컨테이너 삭제
+sudo podman rm osImage
