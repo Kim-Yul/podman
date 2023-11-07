@@ -6,7 +6,7 @@ sudo podman rm -a
 sudo podman rmi -a
 
 # container 이미지를 생성한다.
-echo -e "\ncheckpoint-time 실험에 필요한 이미지를 생성합니다."
+echo -e "\npre-checkpoint-container 실험에 필요한 이미지를 생성합니다."
 sudo podman build -t python -f Dockerfile-python . &> /dev/null
 sudo podman build -t calc -f Dockerfile-calc . &> /dev/null
 echo -e "필요한 이미지를 모두 생성했습니다."
