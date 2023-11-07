@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 컨테이너 실행
-sudo podman run -dt --name notChangedMemory -it notcm
+sudo podman run -dt --name osImage -it ubuntu
 sudo podman ps
 
 # 현재 시간을 초로 변환
@@ -18,4 +18,4 @@ while true; do
 done
 
 # 'checkpoint' 명령어 실행
-sudo podman container checkpoint --print-stats notChangedMemory
+sudo podman container checkpoint --print-stats osImage
