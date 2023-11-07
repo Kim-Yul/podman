@@ -12,9 +12,6 @@ RUN apt-get update && apt-get install -y \
 # 파이썬 패키지 업그레이드
 RUN pip3 install --upgrade pip
 
-# TensorFlow 설치
-RUN pip3 install Tensorflow
-
 # 도커 컨테이너 내에서 Python을 사용할 수 있도록 환경을 설정합니다.
 ENV PATH="/usr/local/bin:${PATH}"
 
